@@ -5,7 +5,7 @@ const {
   inject
 } = Ember;
 
-export default Ember.Route.extend({
+export default Route.extend({
 
   authenticated: inject.service(),
 

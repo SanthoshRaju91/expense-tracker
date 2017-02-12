@@ -101,7 +101,43 @@
     </div><!-- end of need assistance section -->
 
     <div class="footer">
+      <div class="social-media">
+        <div class="container">
 
+          <h5 class="text-center">Connect socially with us</h5>
+          <div class="row">
+            {{#each media as |item|}}
+              <div class="col-md-3">
+                <div class="{{item.class}}">
+                  <a href="{{item.link}}">
+                    {{fa-icon item.icon}}
+                  </a>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div> <!-- end of social media section  -->
+
+      <div class="footer-content">
+        <div class="nav">
+          <ul>
+            <li>
+              <a href="#">Main</a>
+            </li>
+            <li>
+              <a href="#use">How to use</a>
+            </li>
+            <li>
+              <a href="#assistance">Need assistance</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="copyright">
+          &copy; our company name - 2017
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -5,7 +5,7 @@ const {
   inject
 } = Ember;
 
-export default Ember.Controller.extend({
+export default Controller.extend({
 
   authenticated: inject.service(),
 
@@ -39,6 +39,25 @@ export default Ember.Controller.extend({
       icon: 'fa-question-circle-o'
     }];
 
+    let media = [{
+      link: '',
+      icon: 'fa-facebook-official',
+      class: 'facebook'
+    }, {
+      link: '',
+      icon: 'fa-twitter-square',
+      class: 'twitter'
+    }, {
+      link: '',
+      icon: 'fa-instagram',
+      class: 'instagram'
+    }, {
+      link: '',
+      icon: 'fa-google-plus',
+      class: 'google'
+    }];
+
+    this.set('media', media);
     this.set('steps', steps);
     this.set('assistance', assistance);
   },
@@ -47,6 +66,10 @@ export default Ember.Controller.extend({
     authenticate() {
       this.set('authenticated.isAuthenticated', true);
       return true;
+    },
+
+    scroll() {
+
     }
   }
 });

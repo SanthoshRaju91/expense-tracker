@@ -247,6 +247,72 @@
       margin-top: 20px;
       height: 150px;
       background: $summer-sky;
+
+      .social-media {
+        padding-top: 20px;
+        .container {
+          h5 {
+            text-transform: uppercase;
+            color: $primary-color-1;
+            font-size: 1em;
+            letter-spacing: 1px;
+          }
+
+          .row {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 20px;
+
+            .facebook, .twitter, .instagram, .google {
+              a {
+                font-size: 3em;
+                color: $primary-color-1;
+              }
+            }
+          }
+        }
+      }
+
+      .footer-content {
+        margin-top: 15px;
+        height: 80px;
+        background: $bean;
+
+        .nav {
+          text-align: center;
+          padding-top: 20px;
+          ul {
+            list-style: none;
+            li {
+              display: inline;
+              padding: 10px;
+
+              a {
+                color: $primary-color-1;
+                text-decoration: none;
+                font-size: .8em;
+                letter-spacing: 1px;
+                cursor: pointer;
+                font-weight: 300;
+
+                transition: border-bottom 1s ease;
+                
+                &:hover {
+                  border-bottom: 1px solid $white;
+                }
+              }
+            }
+          }
+        }
+
+        .copyright {
+          text-align: center;
+          font-size: .8em;
+          letter-spacing: 1px;
+          font-weight: 300;
+          color: $primary-color-1;
+        }
+      }
     }
   }
 }
