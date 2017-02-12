@@ -6,70 +6,61 @@ const {
 } = Ember;
 
 export default Controller.extend({
-
+  /** showLoginModal proeprty */
+  showLoginModal: false,
+  /** authenticated service */
   authenticated: inject.service(),
 
+  /**
+  * init controller hook
+  * @method init
+  */
   init() {
     this._super(...arguments);
-    let steps = [{
-      text: 'Login to the app',
-      icon: 'fa-circle-thin'
-    },{
-      text: 'Create a group / event',
-      icon: 'fa-circle-thin'
-    }, {
-      text: 'Add friends / colleagues',
-      icon: 'fa-circle-thin'
-    }, {
-      text: 'Add your expenses',
-      icon: 'fa-circle-thin'
-    }, {
-      text: 'Enjoy your trip without having to divide them.',
-      icon: 'fa-circle-thin'
-    }];
-
-    let assistance = [{
-      text: 'Call us on 1800-000-0000',
-      icon: 'fa-phone'
-    }, {
-      text: 'Send us an email on support@expense.com',
-      icon: 'fa-envelope-o'
-    }, {
-      text: 'Raise a request, our support staff will get back to you.',
-      icon: 'fa-question-circle-o'
-    }];
-
-    let media = [{
-      link: '',
-      icon: 'fa-facebook-official',
-      class: 'facebook'
-    }, {
-      link: '',
-      icon: 'fa-twitter-square',
-      class: 'twitter'
-    }, {
-      link: '',
-      icon: 'fa-instagram',
-      class: 'instagram'
-    }, {
-      link: '',
-      icon: 'fa-google-plus',
-      class: 'google'
-    }];
-
-    this.set('media', media);
-    this.set('steps', steps);
-    this.set('assistance', assistance);
   },
 
   actions: {
-    authenticate() {
-      this.set('authenticated.isAuthenticated', true);
-      return true;
+
+    /**
+    * Function to show login model for the user to login
+    * @method showLogin
+    */
+    showLogin() {
+      this.toggleProperty('showLoginModal');
     },
 
-    scroll() {
+    /**
+    * Function to toggle the showLoginModal property
+    * @method toggleModal
+    */
+    toggleModal() {
+      this.toggleProperty('showLoginModal');
+    },
 
+    /**
+    * Function to navigate the user to register route
+    * @method register
+    */
+    register() {
+      this.set('showLoginModal', false);
+      this.transitionToRoute('register');
+    },
+
+    /**
+    * Function to login the user
+    * @method login
+    * @param username password
+    */
+    login(username, password) {
+      let authenticated = this.get('authenticated');
+
+      authenticated.login(username, password)
+        .then((response) => {
+          this.set('showLoginModal', false);
+          this.transitionToRoute('admin');
+        }, (error) => {
+          this.set('errorMsg', error);
+        })
     }
   }
 });

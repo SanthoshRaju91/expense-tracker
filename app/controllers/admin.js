@@ -7,12 +7,19 @@ const {
 
 export default Controller.extend({
 
+  /** authenticated service */
   authenticated: inject.service(),
 
   actions: {
-    authenticate() {
-      this.set('authenticated.isAuthenticated', false);
-      return true;
+
+    /**
+    * Function to logout the user
+    * @method logout
+    */
+    logout() {
+      let authenticated = this.get('authenticated');
+      authenticated.logout();
+      this.transitionToRoute('landing');
     }
   }
 });

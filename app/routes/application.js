@@ -7,28 +7,20 @@ const {
 
 export default Route.extend({
 
+  /** authenticated service */
   authenticated: inject.service(),
 
-  renderTemplate(controller, model) {
+  /**
+  * Authenticating if the user is logged in & navigating
+  * @method beforeModel
+  */
+  beforeModel() {
     let isAuthenticated = this.get('authenticated.isAuthenticated');
 
     if(isAuthenticated) {
-      this.render('admin', {
-        outlet: 'main',
-        controller: this.controllerFor('admin')
-      });
+      this.transitionTo('admin');
     } else {
-      this.render('landing', {
-        outlet: 'main',
-        controller: this.controllerFor('landing')
-      });
-    }
-  },
-
-  actions: {
-    authenticate() {
-      this.renderTemplate();
+      this.transitionTo('landing');
     }
   }
-
 });

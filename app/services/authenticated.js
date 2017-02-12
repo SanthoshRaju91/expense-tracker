@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 const {
-  Service
+  Service,
+  RSVP
 } = Ember;
 
 export default Service.extend({
@@ -14,8 +15,15 @@ export default Service.extend({
   * @method login
   * @param username & password
   */
-  login() {
-
+  login(username, password) {
+    return new RSVP.Promise((resolve, reject) => {
+      if(username === 'sant' && password === '12') {
+        this.set('isAuthenticated', true);
+        resolve();
+      } else {
+        reject('username & password do not match');
+      }
+    });
   },
 
   /**
@@ -23,6 +31,6 @@ export default Service.extend({
   * @method logout
   */
   logout() {
-
+    this.set('isAuthenticated', false);
   }
 });
