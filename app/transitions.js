@@ -8,7 +8,7 @@ export default function() {
 
   this.transition(
     this.fromRoute('landing'),
-    this.toRoute('adming'),
+    this.toRoute('admin'),
     this.use('toLeft'),
     this.reverse('toRight')
   );
@@ -18,5 +18,12 @@ export default function() {
     this.toValue(true),
     this.use('toLeft', {duration: 1000}),
     this.reverse('toRight', {duration: 1000})
+  );
+
+  this.transition(
+    this.fromRoute('landing'),
+    this.toRoute('register'),
+    this.use('toLeft'),
+    this.reverse('toRight')
   );
 }

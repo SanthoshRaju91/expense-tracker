@@ -9,7 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('landing');
   this.route('admin');
-  this.route('register');
+  this.route('register', { path: '/register'});
 });
 
 export default Router;

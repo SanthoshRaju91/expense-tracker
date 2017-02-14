@@ -1,1 +1,42 @@
-{{outlet}}
+<section class="register">
+  <div class="layer"></div>
+
+  <div class="container">
+    <div class="header text-center">
+      <h1>Expense Tracker</h1>
+      <p>Track all your trip / event / office expenses in a single go.</p>
+    </div>
+
+    <div class="register-form">
+
+      <h5 class="text-center">Register Form</h5>
+
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label for="">Email Address</label>
+          {{input type="email" value=email placeholder="Email Address" class="form-control"}}
+        </div>
+
+        <div class="form-group">
+          <label for="">First Names</label>
+          {{input type="text" value=firstName placeholder="First Name" class="form-control"}}
+        </div>
+
+        <div class="form-group">
+          <label for="">Last Name</label>
+          {{input type="text" value=lastName placeholder="Last Name" class="form-control"}}
+        </div>
+
+        <div class="form-group">
+          <label for="">Contact number</label>
+          {{input type="number" value=contactNo placeholder="Contact Number" class="form-control"}}
+        </div>
+
+        <div class="register-btns text-center">
+          <button class="btn btn-default register-btn" {{action 'register'}}>Register</button>
+          <button class="btn btn-default cancel-btn" {{action 'cancel'}}>Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -14,13 +14,13 @@ export default Route.extend({
   * Authenticating if the user is logged in & navigating
   * @method beforeModel
   */
-  beforeModel() {
+  beforeModel(transition) {
     let isAuthenticated = this.get('authenticated.isAuthenticated');
 
     if(isAuthenticated) {
       this.transitionTo('admin');
     } else {
-      this.transitionTo('landing');
+      this.transitionTo(transition.targetName);
     }
   }
 });
