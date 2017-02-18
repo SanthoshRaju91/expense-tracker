@@ -20,6 +20,14 @@ export default Controller.extend({
       let authenticated = this.get('authenticated');
       authenticated.logout();
       this.transitionToRoute('landing');
+    },
+
+    /**
+    * Function to navigate the user to different screen
+    * @method navigateTo
+    */
+    navigateTo(navigate) {
+      this.transitionToRoute(navigate.link);
     }
   }
 });

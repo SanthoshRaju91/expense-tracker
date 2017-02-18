@@ -19,6 +19,7 @@ export default Service.extend({
     return new RSVP.Promise((resolve, reject) => {
       if(username === 'sant' && password === '12') {
         this.set('isAuthenticated', true);
+        Cookies.set('userId', username);
         resolve();
       } else {
         reject('username & password do not match');
@@ -31,6 +32,15 @@ export default Service.extend({
   * @method logout
   */
   logout() {
+    Cookies.remove('userId');
     this.set('isAuthenticated', false);
+  },
+
+  init() {
+    this._super(...arguments);
+    var userId = Cookies.get('userId');
+    if(userId) {
+      this.set('isAuthenticated', true);
+    }
   }
 });

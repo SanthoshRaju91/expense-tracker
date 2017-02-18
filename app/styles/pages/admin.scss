@@ -1,0 +1,104 @@
+.admin {
+  // background-color: $background-color-1;
+  height: 100%;
+
+  .navbar {
+    border-radius: 0px;
+    background: $summer-sky;
+    border-color: $summer-sky;
+    height: 70px;
+    margin-bottom: 0px;
+
+    .navbar-header {
+      .navbar-brand {
+        color: $primary-color-1;
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 300;
+      }
+    }
+
+    .navbar-right {
+      .profile-image {
+        cursor: pointer;
+        margin-top: 5px;
+        margin-right: 30px;
+
+        span {
+          padding-left: 10px;
+          color: $primary-color-1;
+          font-weight: 300;
+          letter-spacing: .5px;
+        }
+      }
+
+      .logout {
+        margin-top: 15px;
+        margin-right: 20px;
+
+        button {
+          border-color: $primary-color-5;
+          color: $primary-color-1;
+          letter-spacing: 2px;
+          background: transparent;
+          transition: opacity .5s ease;
+
+          &:hover {
+            opacity: .7;
+          }
+        }
+        padding-left: 10px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .app-navigation {
+    .col {
+      padding: 0px;
+
+      .navigate-item {
+        cursor: pointer;
+        height: auto;
+        padding: 15px;
+
+        i,span {
+          color: $primary-color-1;
+          font-weight: 300;
+        }
+
+        i {
+          font-size: 1.6em;
+          padding-bottom: 5px;
+        }
+
+        span {
+          font-size: .9em;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+        &:hover {
+          opacity: .9;
+        }
+      }
+    }
+
+    .orange {
+      background-color: #F4B350;
+    }
+
+    .green {
+      background-color: #4ECDC4;
+    }
+
+    .snuff {
+      background-color: #DCC6E0;
+    }
+
+    .confetti {
+      background-color: #E9D460;
+    }
+  }
+}

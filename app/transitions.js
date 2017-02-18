@@ -26,4 +26,46 @@ export default function() {
     this.use('toLeft'),
     this.reverse('toRight')
   );
+
+  this.transition(
+    this.fromRoute('admin.main'),
+    this.toRoute('admin.create'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
+
+  this.transition(
+    this.fromRoute('admin.main'),
+    this.toRoute('admin.view'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
+
+  this.transition(
+    this.fromRoute('admin.main'),
+    this.toRoute('admin.profile'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
+
+  this.transition(
+    this.fromRoute('admin.create'),
+    this.toRoute('admin.view'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
+
+  this.transition(
+    this.fromRoute('admin.create'),
+    this.toRoute('admin.profile'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
+
+  this.transition(
+    this.fromRoute('admin.view'),
+    this.toRoute('admin.profile'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
 }
