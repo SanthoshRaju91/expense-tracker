@@ -1,5 +1,5 @@
 .register {
-  height: 100vh;
+  height: 100%;
   background-image: url('/assets/background.jpg');
   background-position: center;
   background-size: cover;
@@ -95,4 +95,11 @@
       }
     }
   }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }

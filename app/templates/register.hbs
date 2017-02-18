@@ -32,6 +32,16 @@
           {{input type="number" value=contactNo placeholder="Contact Number" class="form-control"}}
         </div>
 
+        <div class="form-group">
+          <label for="">Password</label>
+          {{input type="password" value=password placeholder="Password" class="form-control"}}
+        </div>
+
+        <div class="form-group">
+          <label for="">Confirm Password</label>
+          {{input type="password" value=confirmPassword placeholder="Confirm Password" class="form-control"}}
+        </div>
+
         <div class="register-btns text-center">
           <button class="btn btn-default register-btn" {{action 'register'}}>Register</button>
           <button class="btn btn-default cancel-btn" {{action 'cancel'}}>Cancel</button>

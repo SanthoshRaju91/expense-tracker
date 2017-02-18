@@ -252,6 +252,7 @@
       .social-media {
         padding-top: 20px;
         .container {
+
           h5 {
             text-transform: uppercase;
             color: $primary-color-1;
@@ -260,9 +261,14 @@
           }
 
           .row {
-            width: 50%;
-            margin: 0 auto;
+            width: 38%;
             margin-top: 20px;
+            margin: 0 auto;
+            margin-left: 400px;
+            .col-md-3 {
+              padding: 0px;
+              width: 100px;
+            }
 
             .facebook, .twitter, .instagram, .google {
               a {
