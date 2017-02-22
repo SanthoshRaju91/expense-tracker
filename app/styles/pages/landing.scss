@@ -359,11 +359,28 @@
             font-weight: 300;
           }
 
+          .forgot-password {
+            margin-left: 10px;
+            font-size: .8em;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+
+            border-bottom: 1px solid $background-color-2;
+
+            &:hover {
+
+            }
+          }
+        }
+
+        .register-block {
+          width: 85%;
+          margin: 0 10px 20px 0px;
           .register-btn {
             background: $haze;
             color: $primary-color-1;
             border-color: $haze;
-            width: 30%;
             letter-spacing: 1px;
             font-weight: 300;
           }

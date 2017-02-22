@@ -3,6 +3,7 @@
   background-image: url('/assets/background.jpg');
   background-position: center;
   background-size: cover;
+  margin-bottom: 30px;
 
   .layer {
     background-color: $background-color-2;
@@ -69,6 +70,23 @@
             font-weight: 300;
             letter-spacing: 1px;
           }
+
+          .status-icon {
+            padding-top: 30px;
+
+            .fa {
+              font-weight: 300;
+              font-size: 1.2em;
+            }
+
+            .fa-close {
+              color: $primary-color-3;
+            }
+
+            .fa-check {
+                color: $primary-color-4;
+            }
+          }
         }
 
         .register-btns {
@@ -88,10 +106,19 @@
               float: left;
             }
 
+            .register-btn-disable {
+              float: left;
+              color: $primary-color-4;
+            }
+
             .cancel-btn {
               color: $black;
             }
         }
+      }
+
+      .custom-alert {
+        margin: 0 10px;
       }
     }
   }

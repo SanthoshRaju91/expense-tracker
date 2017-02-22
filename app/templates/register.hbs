@@ -8,45 +8,55 @@
     </div>
 
     <div class="register-form">
-
       <h5 class="text-center">Register Form</h5>
+      {{#if isError}}
+          <div class="alert alert-danger custom-alert">
+            {{errorMsg}}
+          </div>
+      {{/if}}
+        <div class="form-horizontal">
 
-      <div class="form-horizontal">
-        <div class="form-group">
-          <label for="">Email Address</label>
-          {{input type="email" value=email placeholder="Email Address" class="form-control"}}
-        </div>
+          {{#each model.form as |form|}}
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-11">
+                  <label for="">{{form.label}}</label>
+                  {{input
+                    type=form.type
+                    placeholder=form.placeholder
+                    class="form-control"
+                    onblur=(action form.handler form)
+                    change=(action form.handler form)
+                  }}
+                </div>
 
-        <div class="form-group">
-          <label for="">First Names</label>
-          {{input type="text" value=firstName placeholder="First Name" class="form-control"}}
-        </div>
+                <div class="col-md-1">
+                  <div class="status-icon">
+                    {{#if (get formObject form.model)}}
+                      {{#if (get formObject form.error)}}
+                        {{fa-icon 'fa-close'}}
+                      {{else}}
+                        {{fa-icon 'fa-check'}}
+                      {{/if}}
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
 
-        <div class="form-group">
-          <label for="">Last Name</label>
-          {{input type="text" value=lastName placeholder="Last Name" class="form-control"}}
-        </div>
 
-        <div class="form-group">
-          <label for="">Contact number</label>
-          {{input type="number" value=contactNo placeholder="Contact Number" class="form-control"}}
+          <div class="register-btns text-center">
+            <button class="btn btn-default {{if register.isIdle 'register-btn' 'register-btn-disable'}}" onclick={{ perform register model.form }}>
+              {{#if register.isIdle}}
+                Register
+              {{else}}
+                Registering {{fa-icon "spinner" spin=true}}
+              {{/if}}
+            </button>
+            <button class="btn btn-default cancel-btn" {{action 'cancel'}}>Cancel</button>
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="">Password</label>
-          {{input type="password" value=password placeholder="Password" class="form-control"}}
-        </div>
-
-        <div class="form-group">
-          <label for="">Confirm Password</label>
-          {{input type="password" value=confirmPassword placeholder="Confirm Password" class="form-control"}}
-        </div>
-
-        <div class="register-btns text-center">
-          <button class="btn btn-default register-btn" {{action 'register'}}>Register</button>
-          <button class="btn btn-default cancel-btn" {{action 'cancel'}}>Cancel</button>
-        </div>
-      </div>
     </div>
   </div>
 </section>
