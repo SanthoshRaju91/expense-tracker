@@ -38,11 +38,15 @@ export default Controller.extend({
 
     authenticated.login(username, password)
       .then((response) => {
-        this.set('showLoginModal', false);
-        this.transitionToRoute('admin');
+        if(response.sucess) {
+          this.set('showLoginModal', false);
+          this.transitionToRoute('admin');
+        } else {
+          this.set('errorMsg', htmlSafe('Could not login'.join('<br/>')));
+        }
       }, (error) => {
         this.set('errorMsg', htmlSafe(error.messages.join('<br/>')));
-      })
+      });
   }).drop(),
 
   actions: {

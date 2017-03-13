@@ -50,7 +50,9 @@ export default Controller.extend({
       authenticator.register({
         user: formModel
       }).then((response) => {
-        this.transitionToRoute('admin');
+        if(response.success) {
+          this.transitionToRoute('admin');          
+        }
       }, (error) => {
         this.set('isError', true);
         this.set('errorMsg', htmlSafe(error.errors[0].detail.messages.join('<br/>')));

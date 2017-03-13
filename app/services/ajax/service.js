@@ -27,7 +27,7 @@ export default Service.extend({
         method,
         contentType: 'application/json',
         headers: {
-          'Authorization' : `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNDg5Mzc4NjY4LCJleHAiOjE0ODkzOTMwNjh9.BAx8M24WPD4IThrTZMrbeMsdgZtTUhtHuPaKdUF8rxE`
+          'Authorization' : `Bearer ${token}`
         }
       }).then((response) => {
         if (response.success) {
@@ -35,7 +35,7 @@ export default Service.extend({
         }
       }, (failure) => {
         reject(failure);
-      })
+      });
     });
   }
 });

@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { task, timeout } from 'ember-concurrency';
+import { task } from 'ember-concurrency';
 
 const {
   Controller,
@@ -18,7 +18,7 @@ export default Controller.extend({
   */
   create: task(function * (group) {
     let ajaxService = this.get('ajaxService');
-    
+
     let response = yield ajaxService.invoke('/groups', 'POST', {
       group
     });

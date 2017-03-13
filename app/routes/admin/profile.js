@@ -37,5 +37,7 @@ export default Route.extend({
     let ajaxService = this.get('ajaxService');
 
     let userDetails = yield ajaxService.invoke(`/users/${userId}`, 'GET');
+
+    return userDetails;
   })
 });
