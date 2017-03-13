@@ -35,7 +35,8 @@ export default Service.extend({
       }).then((response) => {
         if (response.success) {
           let {
-            data
+            data,
+            token
           } = response;
 
           this.set('isAuthenticated', true);
@@ -43,7 +44,8 @@ export default Service.extend({
           Cookies.set('userId', data.id);
 
           //saving user details in local storage
-          localStorage.setItem('user', data);
+          localStorage.setItem('token', token);
+          localStorage.setItem('user', JSON.stringify(data));
 
           resolve(response);
         }
@@ -97,6 +99,7 @@ export default Service.extend({
           // setting the cookie
           let userId = `${data.id}`;
           Cookies.set('userId', userId);
+          localStorage.set('token', 'salfjsdlkfjije');
 
           // saving user data in local storage
           localStorage.setItem('user', data);
@@ -107,5 +110,13 @@ export default Service.extend({
         reject(failure);
       });
     });
+  },
+
+  /**
+  * Function to get user details from localStorage
+  * @method getUserDetails
+  */
+  getUserDetails() {
+    return localStorage.getItem('user');
   }
 });

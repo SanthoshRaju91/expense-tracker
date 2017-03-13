@@ -1,4 +1,12 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const {
+  Route,
+  inject
+} = Ember;
+
+export default Route.extend({
+
+  /** ajax service inject */
+  ajaxService: inject.service('ajax.service')
 });

@@ -49,8 +49,13 @@ export default Route.extend({
       color: 'confetti'
     }];
 
+    // getting logged in user details from authenticated service
+    let user= JSON.parse(this.get('authenticated').getUserDetails());
+    let username = `${user.first_name} ${user.last_name}`;
+
     return {
-      navigation
+      navigation,
+      username
     };
   }
 });
