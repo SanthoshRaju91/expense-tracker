@@ -23,8 +23,8 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#use">How to use it</a></li>
-              <li><a href="#assistance">Need assitance</a></li>
+              <li> {{scroll-to href='#use' label="How to use it" duration=500}} </li>
+              <li> {{scroll-to href='#assistance' label="Need assitance" duration=500}} </li>
             </ul>
 
             <form class="navbar-form navbar-right">
@@ -125,13 +125,13 @@
       <div class="nav">
         <ul>
           <li>
-            <a href="#">Main</a>
+            {{scroll-to href='#' label="Main" duration=500}}
           </li>
           <li>
-            <a href="#use">How to use</a>
+            {{scroll-to href='#use' label="How to use it" duration=500}}
           </li>
           <li>
-            <a href="#assistance">Need assistance</a>
+            {{scroll-to href='#assistance' label="Need assitance" duration=500}}
           </li>
         </ul>
       </div>
