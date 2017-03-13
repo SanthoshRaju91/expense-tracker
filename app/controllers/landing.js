@@ -38,7 +38,7 @@ export default Controller.extend({
 
     authenticated.login(username, password)
       .then((response) => {
-        if(response.sucess) {
+        if(response.success) {
           this.set('showLoginModal', false);
           this.transitionToRoute('admin');
         } else {
