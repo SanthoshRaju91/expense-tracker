@@ -42,7 +42,7 @@ export default Controller.extend({
           this.set('showLoginModal', false);
           this.transitionToRoute('admin');
         } else {
-          this.set('errorMsg', htmlSafe('Could not login'.join('<br/>')));
+          this.set('errorMsg', 'Could not login');
         }
       }, (error) => {
         this.set('errorMsg', htmlSafe(error.messages.join('<br/>')));
