@@ -1,0 +1,40 @@
+.expense-create {
+  .container-fluid {
+    h3 {
+      font-size: 1.4em;
+      letter-spacing: 1px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    .form-horizontal {
+      .form-group {
+        label {
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 300;
+          font-size: .8em;
+        }
+
+        button {
+          width: 20%;
+          text-transform: uppercase;
+          font-weight: 300;
+          letter-spacing: 1px;
+          font-size: .8em;
+
+          background: $california;
+          border-color: $california;
+        }
+
+        .error {
+          span {
+            font-size: .8em;
+            font-weight: bold;
+            color: $thunderbird;
+          }
+        }
+      }
+    }
+  }
+}

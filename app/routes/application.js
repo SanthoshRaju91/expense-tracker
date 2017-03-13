@@ -1,4 +1,26 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const {
+  Route,
+  inject
+} = Ember;
+
+export default Route.extend({
+
+  /** authenticated service */
+  authenticated: inject.service(),
+
+  /**
+  * Authenticating if the user is logged in & navigating
+  * @method beforeModel
+  */
+  beforeModel(transition) {
+    let isAuthenticated = this.get('authenticated.isAuthenticated');
+
+    if(isAuthenticated) {
+      this.transitionTo('admin');
+    } else {
+      this.transitionTo(transition.targetName);
+    }
+  }
 });

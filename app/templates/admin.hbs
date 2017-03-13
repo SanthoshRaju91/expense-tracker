@@ -1,0 +1,50 @@
+<section class="admin">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!-- <a class="navbar-brand" href="/">Expense Tracker</a> -->
+        {{#link-to admin.main class="navbar-brand" }}
+          Expense Tracker
+        {{/link-to}}
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="profile-image">
+            <img src="/assets/user-image.png" width="50" height="50" alt="user image">
+            <span>{{model.username}}</span>
+          </li>
+          <li class="logout">
+            <button class="btn btn-default btn-sm" {{action 'logout'}}>Logout</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- App navigation -->
+  <div class="app-navigation">
+    <div class="row">
+      {{#each model.navigation as |navigate|}}
+        <div class="{{navigate.class}} col" {{action 'navigateTo' navigate}}>
+          <div class="navigate-item text-center {{navigate.color}}">
+            {{fa-icon navigate.icon}}
+            <br>
+            <span>{{navigate.name}}</span>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="container">
+    {{liquid-outlet}}
+  </div>
+</section>

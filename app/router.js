@@ -7,6 +7,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('landing', { path: '/' });
+  this.route('admin', function() {
+    this.route('main');
+    this.route('create');
+    this.route('view');
+    this.route('profile');
+  });
+  this.route('register', { path: '/register' });
 });
 
 export default Router;

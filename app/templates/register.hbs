@@ -1,0 +1,62 @@
+<section class="register">
+  <div class="layer"></div>
+
+  <div class="container">
+    <div class="header text-center">
+      <h1>Expense Tracker</h1>
+      <p>Track all your trip / event / office expenses in a single go.</p>
+    </div>
+
+    <div class="register-form">
+      <h5 class="text-center">Register Form</h5>
+      {{#if isError}}
+          <div class="alert alert-danger custom-alert">
+            {{errorMsg}}
+          </div>
+      {{/if}}
+        <div class="form-horizontal">
+
+          {{#each model.form as |form|}}
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-11">
+                  <label for="">{{form.label}}</label>
+                  {{input
+                    type=form.type
+                    placeholder=form.placeholder
+                    class="form-control"
+                    onblur=(action form.handler form)
+                    change=(action form.handler form)
+                  }}
+                </div>
+
+                <div class="col-md-1">
+                  <div class="status-icon">
+                    {{#if (get formObject form.model)}}
+                      {{#if (get formObject form.error)}}
+                        {{fa-icon 'fa-close'}}
+                      {{else}}
+                        {{fa-icon 'fa-check'}}
+                      {{/if}}
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+
+
+          <div class="register-btns text-center">
+            <button class="btn btn-default {{if register.isIdle 'register-btn' 'register-btn-disable'}}" onclick={{ perform register model.form }}>
+              {{#if register.isIdle}}
+                Register
+              {{else}}
+                Registering {{fa-icon "spinner" spin=true}}
+              {{/if}}
+            </button>
+            <button class="btn btn-default cancel-btn" {{action 'cancel'}}>Cancel</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
