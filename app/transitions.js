@@ -1,9 +1,11 @@
+const DURATION = 2000;
+
 export default function() {
   this.transition(
     this.fromRoute('index'),
     this.toRoute('landing'),
     this.use('toUp'),
-    this.reverse('crossFade', { duration: 3000 })
+    this.reverse('crossFade', { duration: DURATION })
   );
 
   this.transition(
@@ -16,8 +18,8 @@ export default function() {
   this.transition(
     this.hasClass('login-if'),
     this.toValue(true),
-    this.use('toLeft', {duration: 1000}),
-    this.reverse('toRight', {duration: 1000})
+    this.use('toLeft', {duration: DURATION}),
+    this.reverse('toRight', {duration: DURATION})
   );
 
   this.transition(
@@ -67,5 +69,12 @@ export default function() {
     this.toRoute('admin.profile'),
     this.use('toLeft'),
     this.reverse('toRight')
+  );
+
+  this.transition(
+    this.hasClass('editable'),
+    this.toValue(true),
+    this.use('crossFade', {duration: 500}),
+    this.reverse('toDown', {duration: 500})
   );
 }

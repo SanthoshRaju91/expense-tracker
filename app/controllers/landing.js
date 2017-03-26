@@ -12,12 +12,16 @@ const {
   }
 } = Ember;
 
+
 export default Controller.extend({
   /** showLoginModal proeprty */
   showLoginModal: false,
   /** authenticated service */
   authenticated: inject.service(),
-
+  /** sticky options property */
+  stickyOptions: {
+    // topSpacing: 30
+  },
   /**
    * init controller hook
    * @method init
@@ -25,20 +29,17 @@ export default Controller.extend({
   init() {
     this._super(...arguments);
   },
-
   /**
    * Function to login the user
    * @method login
    * @param username password
    */
   login: task(function*(username, password) {
-    yield timeout(1000);
-
     let authenticated = this.get('authenticated');
 
     authenticated.login(username, password)
       .then((response) => {
-        if(response.success) {
+        if (response.success) {
           this.set('showLoginModal', false);
           this.transitionToRoute('admin');
         } else {

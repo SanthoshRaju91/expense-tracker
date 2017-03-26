@@ -10,7 +10,8 @@
     .container-header {
       background-image: url('/assets/background.jpg');
       position: relative;
-      height: 350px;
+      top: -5em;
+      height: 500px;
       background-position: center;
 
       .layer {
@@ -22,75 +23,9 @@
         height: 100%;
       }
 
-      .navbar {
-        border-radius: 0px;
-        background: $background-color-3;
-        border-color: $summer-sky;
-
-        .container-fluid {
-          padding: 0px 30px;
-
-          .navbar-header {
-            a {
-              color: $primary-color-1;
-              font-weight: 300;
-              letter-spacing: 2px;
-              font-size: 1em;
-            }
-          }
-
-          .navbar-collapse {
-            .navbar-nav {
-              li a {
-                color: $primary-color-1;
-                font-size: 0.8em;
-                font-weight: 300;
-                letter-spacing: 1px;
-                transition: opacity 1s ease;
-
-                &:hover {
-                  opacity: 0.6;
-                }
-              }
-            }
-
-            .navbar-form {
-              margin-top: 10px;
-              button {
-                border-color: $primary-color-5;
-                color: $primary-color-1;
-                letter-spacing: 2px;
-                background: transparent;
-                transition: opacity .5s ease;
-                margin-right: 15px;
-                padding-left: 20px;
-                padding-right: 20px;
-
-                &:hover {
-                  opacity: .9;
-                }
-              }
-            }
-
-            @media screen and (max-width: 767px) {
-              .navbar-form {
-                border-color: inherit;
-
-                border-top: none;
-                border-bottom: none;
-
-                button {
-                  width: 100%;
-                }
-              }
-            }
-          }
-        }
-      }
-
       .panel-section  {
-        margin-top: 70px;
         position: relative;
+        top: 13em;
         z-index: 1;
 
         h1 {
@@ -120,7 +55,7 @@
     }
 
     .how-to-use-section {
-      margin-top: 20px;
+      margin-top: -30px;
 
       h3 {
         font-weight: 300;

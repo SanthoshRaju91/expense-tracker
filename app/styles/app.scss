@@ -11,8 +11,91 @@
   font-family: 'Lato', sans-serif;
 }
 
+
 @import 'utilities/color-palettes';
 @import 'pages/landing';
 @import 'pages/register';
 @import 'pages/admin';
 @import 'pages/admin/create';
+@import 'pages/admin/profile';
+
+
+.navbar {
+  border-radius: 0px;
+  background: $background-color-3;
+  border-color: $summer-sky;
+
+  transition: background .5s ease;
+
+  .container-fluid {
+    padding: 0px 30px;
+
+    .navbar-header {
+      a {
+        color: $primary-color-1;
+        font-weight: 300;
+        letter-spacing: 2px;
+        font-size: 1em;
+      }
+    }
+
+    .navbar-collapse {
+      .navbar-nav {
+        li a {
+          color: $primary-color-1;
+          font-size: 0.8em;
+          font-weight: 300;
+          letter-spacing: 1px;
+          transition: opacity 1s ease;
+
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+
+      .navbar-form {
+        margin-top: 10px;
+        button {
+          border-color: $primary-color-5;
+          color: $primary-color-1;
+          letter-spacing: 2px;
+          background: transparent;
+          transition: opacity .5s ease;
+          margin-right: 15px;
+          padding-left: 20px;
+          padding-right: 20px;
+
+          &:hover {
+            opacity: .9;
+          }
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .navbar-form {
+          border-color: inherit;
+
+          border-top: none;
+          border-bottom: none;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.reached {
+  .navbar-default {
+    background: $bean;
+  }
+}
+
+.main-container {
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+}

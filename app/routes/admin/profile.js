@@ -30,6 +30,17 @@ export default Route.extend({
   },
 
   /**
+  * reset controller route hook
+  * @method resetController
+  */
+  resetController(controller) {
+    controller.setProperties({
+      'editable': false,
+      'isError': false,
+      'saved': false
+    });
+  },
+  /**
   * Get user details currency task
   * @method getUserDetails
   */

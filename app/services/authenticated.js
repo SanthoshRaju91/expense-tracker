@@ -113,6 +113,27 @@ export default Service.extend({
   },
 
   /**
+  * Function to save the user details and update the local storage with the updated value
+  * @method updateUserDetails
+  */
+  updateUserDetails(userId, user) {
+    return new RSVP.Promise((resolve, reject) => {
+      this.get('ajax').request(`/users/update/${userId}`, {
+        method: 'PUT',
+        data: user
+      })
+      .then((response) => {
+        if(response.success) {
+          let { data } = response;
+          localStorage.setItem('user', data);
+        }
+      }, (error) => {
+        reject(error);
+      })
+    })
+  },
+
+  /**
   * Function to get user details from localStorage
   * @method getUserDetails
   */

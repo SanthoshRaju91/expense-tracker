@@ -1,5 +1,79 @@
-<h1>
-  Admin profile page.
-</h1>
+<!-- {{outlet}} -->
+<section class="profile-container">
 
-{{outlet}}
+  {{#liquid-if editable class="editable"}}
+    <div class="row">
+      <div class="col-md-6 profile">
+        <div class="edit-section">
+          <div class="header">
+            <h1>Edit you profile</h1>
+          </div>
+
+          <div class="profile-content profile-first-name">
+            <h3>First Name</h3>
+            {{input type="text" value=profile.first_name class="form-control"}}
+          </div>
+
+          <div class="profile-content profile-last-name">
+            <h3>Last Name</h3>
+            {{input type="text" value=profile.last_name class="form-control"}}
+          </div>
+
+          <div class="profile-content profile-email">
+            <h3>Email Address</h3>
+            {{input type="email" value=profile.email class="form-control"}}
+          </div>
+
+          <div class="profile-content profile-number">
+            <h3>Phone Number</h3>
+            {{input type="number" value=profile.mobile class="form-control"}}
+          </div>
+
+          <div class="profile-content edit-actions">
+            <div class="row">
+              <button class="btn btn-primary btn-sm save" {{action 'save'}}>Save</button>
+              <button class="btn btn-primary btn-sm cancel" {{action 'edit' false}}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{else}}
+    <!-- uneditable state  -->
+    <div class="row">
+      <div class="col-md-6 profile">
+        <div class="profile-section">
+
+          {{#if saved}}
+            <div class="profile-content save-message">
+              <p>
+                {{#if isError}}
+                  {{fa-icon 'fa-exclamation-circle'}}
+                {{else}}
+                  {{fa-icon 'fa-check-circle'}}
+                {{/if}}
+                {{saveMsg}}
+              </p>
+            </div>
+          {{/if}}
+
+          <div class="profile-name">
+            <h1>{{profile.full_name}}</h1>
+
+            <button class="btn btn-primary btn-sm pull-right" {{action 'edit' true}}>Edit</button>
+          </div>
+
+          <div class="profile-content profile-email">
+            <h3>Email</h3>
+            <h5>{{profile.email}}</h5>
+          </div>
+
+          <div class="profile-content profile-number">
+            <h3>Phone Number</h3>
+            <h5>{{profile.mobile}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/liquid-if}}
+</section>

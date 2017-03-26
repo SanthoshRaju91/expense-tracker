@@ -1,0 +1,150 @@
+$rgba5: rgba($white, 0.4);
+
+.profile-container {
+
+
+  .profile {
+    display: block;
+    overflow: auto;
+    height: 75vh;
+    background: $background-color-6;
+
+    .profile-section {
+      padding-top: 20px;
+      .profile-name {
+        color: $primary-color-1;
+        text-align: left;
+        margin: 15px;
+        border-bottom: 1px solid $rgba5;
+
+        h1 {
+          font-size: 1.4em;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: 300;
+        }
+
+        button {
+          position: relative;
+          top: -3.2em;
+          background: $california;
+          border-color: transparent;
+          width: 15%;
+          letter-spacing: 1px;
+          transition: background .5s ease;
+
+          &:hover {
+            background: $lemon;
+          }
+        }
+      }
+
+      .profile-content {
+        padding-top: 5px;
+        color: $primary-color-1;
+        text-align: left;
+        margin: 15px;
+
+        h3 {
+          font-size: 1em;
+          text-transform: uppercase;
+          font-weight: 300;
+          letter-spacing: 1px;
+        }
+
+        h5 {
+          font-size: 1.2em;
+          letter-spacing: 1px;
+        }
+      }
+
+      .save-message {
+        border: 1px solid $rgba5;
+        border-radius: 5px;
+        margin-bottom: 30px;
+
+        i {
+            margin: 0px 10px;
+            font-size: 1.2em;
+        }
+
+        p {
+          padding: 10px;
+          font-size: 1em;
+          font-weight: 300;
+          letter-spacing: 1px;
+        }
+
+
+      }
+    }
+
+
+    .edit-section {
+      padding-top: 0px;
+      margin: 15px;
+
+      .header {
+        border-bottom: 1px  solid $rgba5;
+        h1 {
+          font-size: 1.4em;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: 300;
+          color: $primary-color-1;
+        }
+      }
+
+      .profile-content {
+        h3 {
+          font-size: .8em;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: 300;
+          color: $primary-color-1;
+        }
+
+        .form-control {
+          background: transparent;
+          border: none;
+          box-shadow: none;
+          border-bottom: 1px solid $primary-color-1;
+          color: $primary-color-1;
+          font-weight: bold;
+          border-radius: 0px;
+        }
+      }
+
+      .edit-actions {
+        margin: 15px;
+        margin-top: 30px;
+
+        .btn {
+          padding: 10px;
+          width: 20%;
+          letter-spacing: 1px;
+          border-color: transparent;
+        }
+
+        .save {
+          background: $california;
+          transition: background .5s ease;
+
+          &:hover {
+            background: $lemon;
+          }
+        }
+
+        .cancel {
+          margin-left: 15px;
+          background: transparent;
+          border-color: $primary-color-1;
+        }
+      }
+    }
+  }
+
+  .groups {
+
+  }
+}

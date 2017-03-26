@@ -1,0 +1,117 @@
+<!-- Navigation for the landing page -->
+{{content/nav-bar
+  navActions=(hash
+  register=(action 'register')
+  showLogin=(action 'showLogin'))
+}}
+
+<!-- Content for landing page -->
+<div class="container-fluid">
+  <div class="container-header">
+    <div class="layer"></div>
+
+    <div class="panel-section text-center">
+      <h1>Manage all your expenses</h1>
+
+      <p>
+        Track event expenses in your office / outing expenses with friends with ease just add the expenses, it automatically divides the expense.
+      </p>
+
+      <button class="btn btn-default">
+        Learn more !
+      </button>
+    </div>
+  </div><!-- end of page header -->
+
+  <div class="how-to-use-section" id="use">
+    <div class="container-fluid">
+      <h3 class="text-center">How to use </h3>
+      <hr/>
+
+      <div class="row container">
+        <div class="col-md-6 col-lg-6 pic-section">
+          <img src="/assets/responsive.png"/>
+        </div>
+
+        <div class="col-md-6 col-lg-6 col-sm-12 list-section">
+
+          <h5>Steps to start off</h5>
+          <ul>
+            {{#each steps as |item|}}
+              <li>
+                {{fa-icon item.icon}}
+                <span>{{item.text}}</span>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div><!-- end of how to use section -->
+
+  <div class="need-assitance-section" id="assistance">
+    <div class="container-fluid">
+      <h3 class="text-center"> Need any assitance</h3>
+      <hr/>
+
+      <div class="row container">
+        <div class="col-md-6 col-lg-6 pic-section">
+          <img src="/assets/call-center.png"/>
+        </div>
+
+        <div class="col-md-6 col-lg-6 list-section">
+          <h5>Get assistance via any one of the below media</h5>
+
+          <ul>
+            {{#each assistance as |item|}}
+              <li>
+                {{fa-icon item.icon}}
+                <span>{{item.text}}</span>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div><!-- end of need assistance section -->
+
+  <div class="footer">
+    <div class="social-media">
+      <div class="container">
+
+        <h5 class="text-center">Connect socially with us</h5>
+        <div class="row">
+          {{#each media as |item|}}
+            <div class="col-md-3">
+              <div class="{{item.class}}">
+                <a href="{{item.link}}">
+                  {{fa-icon item.icon}}
+                </a>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div> <!-- end of social media section  -->
+  </div>
+
+  <div class="footer-content">
+    <div class="nav">
+      <ul>
+        <li>
+          {{scroll-to href='#' label="Main" duration=500}}
+        </li>
+        <li>
+          {{scroll-to href='#use' label="How to use it" duration=500}}
+        </li>
+        <li>
+          {{scroll-to href='#assistance' label="Need assitance" duration=500}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="copyright">
+      &copy; our company name - 2017
+    </div>
+  </div>
+</div>
